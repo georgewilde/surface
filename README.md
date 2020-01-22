@@ -1,3 +1,7 @@
+# Surface
+
+Vote on the things that matter.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -11,10 +15,6 @@
     - [Visualising the project structure](#visualising-the-project-structure)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Surface
-
-Vote on the things that matter
 
 ## Development
 
