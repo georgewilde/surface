@@ -1,115 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "surface": {
-      "root": "apps/surface",
-      "sourceRoot": "apps/surface/src",
-      "projectType": "application",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/web:build",
-          "options": {
-            "outputPath": "dist/apps/surface",
-            "index": "apps/surface/src/index.html",
-            "main": "apps/surface/src/main.tsx",
-            "polyfills": "apps/surface/src/polyfills.ts",
-            "tsConfig": "apps/surface/tsconfig.app.json",
-            "assets": [
-              "apps/surface/src/favicon.ico",
-              "apps/surface/src/assets"
-            ],
-            "styles": [],
-            "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/webpack"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/surface/src/environments/environment.ts",
-                  "with": "apps/surface/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "surface:build",
-            "proxyConfig": "apps/surface/proxy.conf.json"
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "surface:build:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "apps/surface/.eslintrc",
-            "tsConfig": [
-              "apps/surface/tsconfig.app.json",
-              "apps/surface/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/surface/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/surface/jest.config.js",
-            "tsConfig": "apps/surface/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "surface-e2e": {
-      "root": "apps/surface-e2e",
-      "sourceRoot": "apps/surface-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/surface-e2e/cypress.json",
-            "tsConfig": "apps/surface-e2e/tsconfig.e2e.json",
-            "devServerTarget": "surface:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "surface:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "apps/surface-e2e/.eslintrc",
-            "tsConfig": ["apps/surface-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/surface-e2e/**"]
-          }
-        }
-      }
-    },
     "api": {
       "root": "apps/api",
       "sourceRoot": "apps/api/src",
@@ -192,6 +83,114 @@
           }
         }
       }
+    },
+    "surface": {
+      "root": "apps/surface",
+      "sourceRoot": "apps/surface",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/surface",
+            "outputPath": "dist/apps/surface"
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:dev-server",
+          "options": {
+            "buildTarget": "surface:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "surface:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/surface/.eslintrc",
+            "tsConfig": [
+              "apps/surface/tsconfig.json",
+              "apps/surface/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/surface/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/surface/jest.config.js",
+            "tsConfig": "apps/surface/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "surface-e2e": {
+      "root": "apps/surface-e2e",
+      "sourceRoot": "apps/surface-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/surface-e2e/cypress.json",
+            "tsConfig": "apps/surface-e2e/tsconfig.e2e.json",
+            "devServerTarget": "surface:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "surface:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/surface-e2e/.eslintrc",
+            "tsConfig": ["apps/surface-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/surface-e2e/**"]
+          }
+        }
+      }
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/ui/.eslintrc",
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -224,6 +223,7 @@
     },
     "@nrwl/next": {
       "application": {
+        "style": "styled-components",
         "linter": "eslint"
       }
     },

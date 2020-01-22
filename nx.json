@@ -11,6 +11,12 @@
     "nx.json": "*"
   },
   "projects": {
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    },
     "surface": {
       "tags": []
     },
@@ -18,10 +24,7 @@
       "tags": [],
       "implicitDependencies": ["surface"]
     },
-    "api": {
-      "tags": []
-    },
-    "api-interfaces": {
+    "ui": {
       "tags": []
     }
   }
