@@ -1,0 +1,28 @@
+{
+  "npmScope": "surface",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "surface": {
+      "tags": []
+    },
+    "surface-e2e": {
+      "tags": [],
+      "implicitDependencies": ["surface"]
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
