@@ -18,10 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2;
     font-family: lato, sans-serif;
     background-color: ${theme.colors.background};
-    color: ${theme.colors.text};
   }
 
   a {

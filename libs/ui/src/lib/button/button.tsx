@@ -3,14 +3,14 @@ import React, { FC } from 'react';
 import { StyledPrimaryButton, StyledSecondaryButton } from './button.styled';
 
 interface ButtonProps {
-  style: 'primary' | 'secondary';
+  styled: 'primary' | 'secondary';
   text: string;
 }
 
-export const Button: FC<ButtonProps> = ({ style, text }) => (
+export const Button: FC<ButtonProps> = ({ styled, text }) => (
   <>
-    {style === 'primary' && <StyledPrimaryButton>{text}</StyledPrimaryButton>}
-    {style === 'secondary' && (
+    {styled === 'primary' && <StyledPrimaryButton>{text}</StyledPrimaryButton>}
+    {styled === 'secondary' && (
       <StyledSecondaryButton>{text}</StyledSecondaryButton>
     )}
   </>

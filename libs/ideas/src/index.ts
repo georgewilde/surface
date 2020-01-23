@@ -1,1 +1,1 @@
-export * from './lib/ideas';
+export * from './lib/idea-list';

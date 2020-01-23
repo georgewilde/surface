@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledPage = styled.div`
-  background: ${props => props.theme.background};
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.colors.text};
+`;
+
+export const StyledMain = styled.main`
+  max-width: ${props => props.theme.maxWidth};
+  margin: 0 auto;
+  padding: 0 20px;
 `;

@@ -1,13 +1,18 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 
+import { StyledNav } from './nav.styled';
+
 export const Nav: FC = () => (
-  <div>
+  <StyledNav>
     <Link href="/">
-      <a>Link 1</a>
+      <a>Ideas</a>
     </Link>
-    <Link href="/">
-      <a>Link 2</a>
+    <Link href="/users">
+      <a>Users</a>
     </Link>
-  </div>
+    <Link href="/account">
+      <a>My Account</a>
+    </Link>
+  </StyledNav>
 );
