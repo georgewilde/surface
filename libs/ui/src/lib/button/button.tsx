@@ -1,3 +1,17 @@
 import React, { FC } from 'react';
 
-export const Button: FC = () => <button>Button</button>;
+import { StyledPrimaryButton, StyledSecondaryButton } from './button.styled';
+
+interface ButtonProps {
+  style: 'primary' | 'secondary';
+  text: string;
+}
+
+export const Button: FC<ButtonProps> = ({ style, text }) => (
+  <>
+    {style === 'primary' && <StyledPrimaryButton>{text}</StyledPrimaryButton>}
+    {style === 'secondary' && (
+      <StyledSecondaryButton>{text}</StyledSecondaryButton>
+    )}
+  </>
+);

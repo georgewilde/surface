@@ -1,16 +1,18 @@
 import React from 'react';
 import App from 'next/app';
 
-import { Page } from '@surface/ui';
+import { Page, Theme } from '@surface/ui';
 
 class SurfaceApp extends App {
   render() {
     const { Component } = this.props;
 
     return (
-      <Page>
-        <Component />
-      </Page>
+      <Theme>
+        <Page>
+          <Component />
+        </Page>
+      </Theme>
     );
   }
 }

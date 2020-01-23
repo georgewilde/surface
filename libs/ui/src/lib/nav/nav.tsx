@@ -4,10 +4,10 @@ import Link from 'next/link';
 export const Nav: FC = () => (
   <div>
     <Link href="/">
-      <a>Home</a>
+      <a>Link 1</a>
     </Link>
-    <Link href="/sell">
-      <a>Sell</a>
+    <Link href="/">
+      <a>Link 2</a>
     </Link>
   </div>
 );
