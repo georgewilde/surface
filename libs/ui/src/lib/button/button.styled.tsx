@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   cursor: pointer;
   padding: 5px;
+  color: ${props => props.theme.colors.text};
 `;
 
-export const StyledPrimaryButton = styled(Button)`
-  background-color: #d8005a;
+export const StyledPrimaryButton = styled(StyledButton)`
+  background-color: ${props => props.theme.colors.primary};
 `;
 
-export const StyledSecondaryButton = styled(Button)`
-  background-color: #f6ae2d;
+export const StyledSecondaryButton = styled(StyledButton)`
+  background-color: ${props => props.theme.colors.secondary};
 `;

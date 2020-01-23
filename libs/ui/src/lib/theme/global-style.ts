@@ -4,11 +4,12 @@ import { theme } from './theme-dark';
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    box-sizing: border-box;
     font-size: 10px;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: inherit;
   }
 
@@ -19,6 +20,17 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     line-height: 2;
     font-family: lato, sans-serif;
-    background-color: ${theme.background};
+    background-color: ${theme.colors.background};
+    color: ${theme.colors.text};
+  }
+
+  a {
+    color: ${theme.colors.link};
+    text-decoration: none;
+
+    &:hover {
+      color: ${theme.colors.linkHover};
+      text-decoration: none;
+    }
   }
 `;

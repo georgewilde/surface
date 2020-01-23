@@ -4,3 +4,4 @@ export * from './lib/button/button';
 export * from './lib/page/page';
 export * from './lib/nav/nav';
 export * from './lib/theme/theme';
+export * from './lib/theme/theme-dark';
