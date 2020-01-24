@@ -1,6 +1,12 @@
 import React, { FC } from 'react';
 
 import { Idea } from '@surface/api-interfaces';
+import {
+  StyledIdeaList,
+  StyledListItem,
+  StyledTitle,
+  StyledVoteCount
+} from './idea-list.styled';
 
 interface IdeaListProps {
   ideas: Idea[];
@@ -8,10 +14,13 @@ interface IdeaListProps {
 
 export const IdeaList: FC<IdeaListProps> = ({ ideas }) => (
   <>
-    <ul>
+    <StyledIdeaList>
       {ideas.map(idea => (
-        <li key={idea.id}>{idea.title}</li>
+        <StyledListItem key={idea.id}>
+          <StyledVoteCount>{idea.voteCount}</StyledVoteCount>
+          <StyledTitle>{idea.title}</StyledTitle>
+        </StyledListItem>
       ))}
-    </ul>
+    </StyledIdeaList>
   </>
 );

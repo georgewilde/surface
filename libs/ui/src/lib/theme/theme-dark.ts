@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 export const theme: DefaultTheme = {
   colors: {
     background: '#282828',
-    border: '#4F4F4F',
+    border: '#151515',
     text: '#FFFFFF',
     link: '#FFFFFF',
     linkHover: '#CCCCCC',
